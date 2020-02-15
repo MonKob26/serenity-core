@@ -45,7 +45,7 @@
             <#list scenario.results as scenarioOutcome>
             {
               "result": "${scenarioOutcome.result}",
-              "description": "${scenarioOutcome.description}",
+              "description": "<#escape x as x?replace('\n', '\\n')>${scenarioOutcome.description}</#escape>",
               "errorMessage": "${scenarioOutcome.errorMessage}"
             }<#sep>,</#sep>
             </#list>
